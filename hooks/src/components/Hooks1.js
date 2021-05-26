@@ -1,8 +1,13 @@
-import React,{useState} from 'react'           //import package usestate
+import React,{useEffect, useState} from 'react'           //import package usestate
 
 export default function Hooks1() {
-    const[name, setname]= useState("Reema")     //define setter function by your choice while defining the state
-    const[name1, setname1]=useState()
+    const[name, setname]= useState("Reema");     //define setter function by your choice while defining the state
+    const[name1, setname1]=useState();
+
+   useEffect(()=>{
+    alert("react hook trigger")
+    console.log("react hook called")
+   })
     return (
         <div>
             <h1>I am using React-Hooks</h1>
