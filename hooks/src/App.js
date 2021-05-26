@@ -5,6 +5,7 @@ import Counter2 from './components/Counter2';
 import Counter3 from './components/Counter3';
 import Counter4 from './components/Counter4';
 import Hooks1 from './components/Hooks1';
+import EffectCounter from './components/useEffectHook/EffectCounter';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
      <hr></hr>
      <h1>useEffect hook</h1>
      <Lifecycle/>
+     <h3>(using class component)</h3>
+     <EffectCounter/>
+     <h3>(above using effect hook in functional component)</h3>
     </div>
   );
 }
