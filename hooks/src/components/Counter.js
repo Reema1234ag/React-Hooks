@@ -9,3 +9,4 @@ export default function Counter() {
         </div>
     )
 }
+//the setcount func will cost the component to be re-rendered after every click
