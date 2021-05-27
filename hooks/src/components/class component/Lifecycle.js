@@ -6,21 +6,31 @@ class Lifecycle extends Component {
     
         this.state = {
             count:0,
+            name:''
         }
     }
     componentDidMount(){
         document.title=`you clicked ${this.state.count} times `
+        //alert("component did mount")
     }
-    componentDidUpdate(){
-        document.title=`you clicked ${this.state.count} times `
+    componentDidUpdate(prevProps,prevState){
+        if(prevState.count != this.state.count)             //conditionally updating the title
+        {
+            console.log("updating document title")
+            document.title=`you clicked ${this.state.count} times `
+        }
     }
         
     render() {
         return (
             <div>
               <div>
-              <h2> count- {this.state.count}</h2>
-              <button onClick={()=>{this.setState({count:this.state.count+1})}}>Increment</button>
+                  <input type='text' value={this.state.name} onChange={e =>{
+                      this.setState({
+                          name:e.target.value
+                      })
+                  }}/>
+              <button onClick={()=>{this.setState({count:this.state.count+1})}}>Clicked {this.state.count} times </button>
             </div>  
             </div>
         )
