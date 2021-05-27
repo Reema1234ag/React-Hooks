@@ -4,13 +4,16 @@ import React,{useState,useEffect} from 'react'
 
 function EffectCounter() {
     const[count, setcount]=useState(0)
+    const[name,setname]=useState('')
     useEffect(()=>  // this parameter execute after every render to the component
     {
+        console.log("useEffect- updating document title")
         document.title=`you clicked ${count} times`
     }
-    )
+    ,[count])
     return (
         <div>
+            <input type='text' value={name} onChange={e =>{setname(e.target.value)}}/>
            <button onClick={()=>{setcount(count+1)}}>Clicked {count} times</button> 
         </div>
     )
