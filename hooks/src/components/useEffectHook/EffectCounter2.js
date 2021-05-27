@@ -16,6 +16,10 @@ function EffectCounter2() {
     {
         console.log("useEffect called")
         window.addEventListener('mousemove', logMousePosition)
+        return ()=>{  
+           console.log("component unmounted code")                                                                        //adding clean-up func(mimic of componentWillUnmount)
+           window.removeEventListener('mousemove', logMousePosition)
+        }
     }
     ,[])           //we can mimic the componentDidMount() by just passing an empty array in the 2nd parameter of useEffect
                     //this will render now only once at starting  as componentDidMount does
